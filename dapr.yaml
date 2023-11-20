@@ -1,0 +1,14 @@
+version: 1
+common:
+  resourcesPath: ./components
+  env:
+    DEBUG: true
+apps:
+  - appID: dapr-sample-app
+    appDirPath: ./dapr-sample-app/
+    daprHTTPPort: 3500
+    appPort: 5010
+    logLevel: debug
+    appProtocol: http
+    daprHTTPMaxRequestSize: 32
+    command: ["dotnet", "run", "--urls", "http://*:5010/"]
